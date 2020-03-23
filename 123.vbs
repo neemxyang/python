@@ -25,10 +25,16 @@ Sub 分类汇总()
         .[a1].Resize(1, 3) = Array("排名", "院线名称", "影院数量")
         .Range("a2:b" & [a65536].End(3).Row).Sort key1:=[b2], Order1:=xlDescending
         with .Columns
-
-        
-            
+            .AutoFit
+            .VerticalAlignment = xlCenter
+            .HorizontalAlignment = xlCenter
         End With
+        with .Rows
+            .AutoFit
+            .VerticalAlignment = xlCenter
+            .HorizontalAlignment = xlCenter
+        End With
+
     End With
     
     
@@ -41,16 +47,6 @@ Sub 分类汇总()
         Sheet3.Cells(b + 1, 1) = b
     Next
     
-    With Sheet3.Columns
-        .AutoFit
-        .VerticalAlignment = xlCenter
-        .HorizontalAlignment = xlCenter
-    End With
-    
-    With Sheet3.Rows
-        .AutoFit
-        .VerticalAlignment = xlCenter
-        .HorizontalAlignment = xlCenter
-    End With
+   
     Set d = Nothing
 End Sub
